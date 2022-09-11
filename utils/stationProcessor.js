@@ -1,39 +1,41 @@
 
 const stationProcessor = {
-  getBeaufort(station)
+getBeaufort(station)
   {
-    const getLatestFromStation = stationProcessor.getLatestFromStation(station);
+    const latestDataEntry = stationProcessor.getLatestFromStation(station);
+    if(latestDataEntry == null)
+        return -1;
     let beaufort = 0;
-    if(getLatestFromStation == null)
+    if(latestDataEntry == null)
       return 0;
     
-    if (getLatestFromStation.wSpeed > 0){
+    if (latestDataEntry.wSpeed > 0){
       
-      if(getLatestFromStation.wSpeed == 0){
+      if(latestDataEntry.wSpeed == 0){
         beaufort = 0;
-        }else if (getLatestFromStation.wSpeed >= 1 && getLatestFromStation.wSpeed <= 6){
+        }else if (latestDataEntry.wSpeed >= 1 && latestDataEntry.wSpeed <= 6){
         beaufort = 1;
-        }else if(getLatestFromStation.wSpeed >= 7 && getLatestFromStation.wSpeed <= 11){
+        }else if(latestDataEntry.wSpeed >= 7 && latestDataEntry.wSpeed <= 11){
         beaufort = 2;
-        }else if(getLatestFromStation.wSpeed >= 12 && getLatestFromStation.wSpeed <= 19){
+        }else if(latestDataEntry.wSpeed >= 12 && latestDataEntry.wSpeed <= 19){
         beaufort = 3;
-        }else if(getLatestFromStation.wSpeed >= 20 && getLatestFromStation.wSpeed <= 29){
+        }else if(latestDataEntry.wSpeed >= 20 && latestDataEntry.wSpeed <= 29){
         beaufort = 4;  
-        }else if(getLatestFromStation.wSpeed >= 30 && getLatestFromStation.wSpeed <= 39){
+        }else if(latestDataEntry.wSpeed >= 30 && latestDataEntry.wSpeed <= 39){
         beaufort = 5;
-        }else if(getLatestFromStation.wSpeed >= 40 && getLatestFromStation.wSpeed <= 50){
+        }else if(latestDataEntry.wSpeed >= 40 && latestDataEntry.wSpeed <= 50){
         beaufort = 6;
-        }else if(getLatestFromStation.wSpeed >= 51 && getLatestFromStation.wSpeed <= 62){
+        }else if(latestDataEntry.wSpeed >= 51 && latestDataEntry.wSpeed <= 62){
         beaufort = 7;
-        }else if(getLatestFromStation.wSpeed >= 63 && getLatestFromStation.wSpeed <= 75){
+        }else if(latestDataEntry.wSpeed >= 63 && latestDataEntry.wSpeed <= 75){
         beaufort = 8;
-        }else if(getLatestFromStation.wSpeed >= 76 && getLatestFromStation.wSpeed <= 87){
+        }else if(latestDataEntry.wSpeed >= 76 && latestDataEntry.wSpeed <= 87){
         beaufort = 9;
-        }else if(getLatestFromStation.wSpeed >= 88 && getLatestFromStation.wSpeed <= 102){
+        }else if(latestDataEntry.wSpeed >= 88 && latestDataEntry.wSpeed <= 102){
         beaufort = 10;
-        }else if(getLatestFromStation.wSpeed >= 103 && getLatestFromStation.wSpeed <= 117){
+        }else if(latestDataEntry.wSpeed >= 103 && latestDataEntry.wSpeed <= 117){
         beaufort = 11; 
-        }else if(getLatestFromStation.wSpeed >= 117){
+        }else if(latestDataEntry.wSpeed >= 117){
         beaufort = 12;
         }  
 
@@ -43,6 +45,8 @@ const stationProcessor = {
   
   getWeatherFromCode(station) {
     const latestDataEntry = stationProcessor.getLatestFromStation(station);
+    if(latestDataEntry == null)
+        return '0';
     switch (latestDataEntry.code) {
         case '100':
             return "Clear";
@@ -78,20 +82,28 @@ const stationProcessor = {
   getTempInF(station) 
     {
       const latestDataEntry = stationProcessor.getLatestFromStation(station);
+      if(latestDataEntry == null)
+        return -1;
+        
       const f = latestDataEntry.temp * 9 / 5 + 32;
       return f;
     },
   
   getTemp(station) 
-  
-    {
-      const latestDataEntry = stationProcessor.getLatestFromStation(station);
-        const temp = latestDataEntry.temp
-        return temp;
-    },
+  {
+    const latestDataEntry = stationProcessor.getLatestFromStation(station);
+    if(latestDataEntry == null)
+      return -1;
+
+    const temp = latestDataEntry.temp
+    return temp;
+  },
   
       getWDir(station) {
         const latestDataEntry = stationProcessor.getLatestFromStation(station);
+        if(latestDataEntry == null)
+          return 'No Data, try adding a reading';
+        
         const wDir = latestDataEntry.wDir
         let d = wDir;
         if (d > 11.25 && d <= 33.75) {
@@ -133,6 +145,8 @@ const stationProcessor = {
     getWChill(station) 
       {
         const latestDataEntry = stationProcessor.getLatestFromStation(station);
+        if(latestDataEntry == null)
+          return -1;
         const wSpeed = latestDataEntry.wSpeed;
         const temp = latestDataEntry.temp;
         const vPow = Math.pow(wSpeed, 0.16);
@@ -144,6 +158,8 @@ const stationProcessor = {
 
       {
         const latestDataEntry = stationProcessor.getLatestFromStation(station);
+        if(latestDataEntry == null)
+          return -1;
         const pressure = latestDataEntry.pressure;
         return pressure;
       
@@ -152,6 +168,8 @@ const stationProcessor = {
     getIcon(station)
         {
         const latestDataEntry = stationProcessor.getLatestFromStation(station);
+        if(latestDataEntry == null)
+          return '';
         const code = latestDataEntry.code;
           
           
