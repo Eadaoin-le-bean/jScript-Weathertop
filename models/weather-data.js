@@ -34,6 +34,13 @@ const weatherData = {
     this.store.save();
   },
   
+    removeReading(id, dataId) {
+    const station = this.getStation(id);
+    const data = station.data;
+    _.remove(data, { id: dataId });
+    this.store.save();
+  },
+  
 
   
 }

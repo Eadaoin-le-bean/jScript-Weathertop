@@ -52,6 +52,14 @@ const station = {
     logger.debug("New Reading = ", newReading);
     weatherData.addReading(stationId, newReading);
     response.redirect("/station/" + stationId);
+  },
+  
+    deleteReading(request, response) {
+    const stationId = request.params.id;
+    const dataId = request.params.dataId;
+    logger.debug(`Deleting Weater Data ${dataId} from Playlist ${stationId}`);
+    weatherData.removeReading(stationId, dataId);
+    response.redirect("/station/" + stationId);
   }
 };
 

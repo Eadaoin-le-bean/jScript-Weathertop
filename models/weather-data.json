@@ -5,14 +5,6 @@
       "station": "Zion",
       "data": [
         {
-          "id": "02",
-          "code": "300",
-          "temp": "22.3",
-          "wSpeed": "19",
-          "wDir": 150,
-          "pressure": 1000
-        },
-        {
           "id": "eba19ec0-31b6-11ed-a56b-1da147acf314",
           "code": "200",
           "temp": "34.5",
