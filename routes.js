@@ -13,5 +13,6 @@ router.get("/about", about.index);
 router.get("/station/:id", station.index);
 router.post("/dashboard/addStation", dashboard.addStation);
 router.post("/station/:id/addReading", station.addReading);
+router.get("/dashboard/deleteStation/:id", dashboard.deleteStation);
 
 module.exports = router;

@@ -24,7 +24,15 @@ const dashboard = {
     logger.debug("Creating a new Station", newStation);
     weatherData.addStation(newStation);
     response.redirect("/dashboard");
-  }
+  },
+  
+    deleteStation(request, response) {
+    const stationId = request.params.id;
+    logger.debug(`Deleting Station ${stationId}`);
+    weatherData.removeStation(stationId);
+    response.redirect("/dashboard");
+  },
+    
 };
 
 module.exports = dashboard;
