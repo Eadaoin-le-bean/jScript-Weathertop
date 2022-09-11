@@ -1,31 +1,35 @@
 <title>Weather Data</title>
 <table class="ui fixed table">
-  
 
-    <body>
-
+  <body>
 
     <div class="ui grid">
-        <div class="four wide column" style="background-color: #D98566">
-            <h1>Latest Weather</h1>
-            {{weatherString}}<br> <i class="{{weatherIcon}}" style="color: #B3DAF2"></i>
+      <div class="four wide column" style="background-color: #D98566">
+        <h1>Latest Weather</h1>
+        {{weatherString}}<br />
+        <i class="{{weatherIcon}}" style="color: #B3DAF2"></i>
       </div>
 
-        <div class="four wide column" style="background-color: #D9B573">
-            <h1>Temperature</h1>
-            {{fahrenite}} F<br>{{celcius}} C
-        </div>
+      <div class="four wide column" style="background-color: #D9B573">
+        <h1>Temperature</h1>
+        {{fahrenite}}
+        F<br />{{celcius}}
+        C
+      </div>
 
-        <div class="four wide column" style="background-color: #BFAA3F"><h1>Wind</h1>
-            {{beaufort}}<br>{{direction}}
-            <br>Feels Like {{windChill}}
-        </div>
+      <div class="four wide column" style="background-color: #BFAA3F"><h1
+        >Wind</h1>
+        {{beaufort}}<br />{{direction}}
+        <br />Feels Like
+        {{windChill}}
+      </div>
 
-        <div class="four wide column" style="background-color: #C0DDEF"><h1>Pressure</h1><br>
-            {{weatherPressure}} hpa
-        </div>
+      <div class="four wide column" style="background-color: #C0DDEF"><h1
+        >Pressure</h1><br />
+        {{weatherPressure}}
+        hpa
+      </div>
     </div>
-    
-    
+
   </body>
 </table>

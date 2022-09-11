@@ -13,6 +13,34 @@
       "email": "marge@simpson.com",
       "password": "secret",
       "id": "2b6f0989-7b7f-4a38-ad26-aa06b922d751"
+    },
+    {
+      "firstName": "Kevin",
+      "lastName": "Daly",
+      "email": "percussion505@hotmail.com",
+      "password": "123456",
+      "id": "2ec6b7b0-31ff-11ed-aefb-fb59c95d8df3"
+    },
+    {
+      "firstName": "Eadaoin",
+      "lastName": "Doyle",
+      "email": "larryh.goblin@hotmail.com",
+      "password": "doyle",
+      "id": "40617bc0-3201-11ed-aefb-fb59c95d8df3"
+    },
+    {
+      "firstName": "jimminy",
+      "lastName": "cricket",
+      "email": "jimminycricket@hotmail.com",
+      "password": "blahblah",
+      "id": "e2e5a3d0-3201-11ed-877f-43a5b1c1e109"
+    },
+    {
+      "firstName": "k",
+      "lastName": "d",
+      "email": "something@gmail.com",
+      "password": "12345",
+      "id": "7e733c60-3205-11ed-b35e-dd797c5562d9"
     }
   ]
 }

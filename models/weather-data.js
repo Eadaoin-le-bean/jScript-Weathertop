@@ -5,7 +5,7 @@ const JsonStore = require("./json-store");
 
 const weatherData = {
   store: new JsonStore("./models/weather-data.json", {
-    weatherData: []
+    weatherData: [],
   }),
   collection: "weatherData",
 
@@ -16,33 +16,30 @@ const weatherData = {
   getStation(id) {
     return this.store.findOneBy(this.collection, { id: id });
   },
-  
+
   addStation(station) {
     this.store.add(this.collection, station);
     this.store.save();
   },
-  
+
   removeStation(id) {
     const station = this.getStation(id);
     this.store.remove(this.collection, station);
     this.store.save();
   },
-  
-   addReading(id, reading) {
+
+  addReading(id, reading) {
     const station = this.getStation(id);
     station.data.push(reading);
     this.store.save();
   },
-  
-    removeReading(id, dataId) {
+
+  removeReading(id, dataId) {
     const station = this.getStation(id);
     const data = station.data;
     _.remove(data, { id: dataId });
     this.store.save();
   },
-  
+};
 
-  
-}
-  
-  module.exports = weatherData;
+module.exports = weatherData;

@@ -9,7 +9,7 @@ const home = {
       title: "Welcome to Weathertop Station",
     };
     response.render("home", viewData);
-  }
+  },
 };
 
 module.exports = home;

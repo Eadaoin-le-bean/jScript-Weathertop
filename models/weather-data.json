@@ -1,6 +1,28 @@
 {
   "weatherData": [
     {
+      "id": "01",
+      "station": "Zion",
+      "data": [
+        {
+          "id": "02",
+          "code": "300",
+          "temp": "22.3",
+          "wSpeed": "19",
+          "wDir": 150,
+          "pressure": 1000
+        },
+        {
+          "id": "eba19ec0-31b6-11ed-a56b-1da147acf314",
+          "code": "200",
+          "temp": "34.5",
+          "wSpeed": "23",
+          "wDir": "120",
+          "pressure": "1050"
+        }
+      ]
+    },
+    {
       "id": "06",
       "station": "Bryce Canyon",
       "data": [
@@ -57,8 +79,13 @@
       ]
     },
     {
-      "id": "98ef6770-31ed-11ed-830c-1d67d8726f65",
-      "station": "Monument Valley",
+      "id": "3bed0a40-31b7-11ed-b0b6-d1771ff04190",
+      "station": "Capitol Reef",
+      "data": []
+    },
+    {
+      "id": "3c0c7920-31b7-11ed-b0b6-d1771ff04190",
+      "station": "Capitol Reef",
       "data": []
     }
   ]

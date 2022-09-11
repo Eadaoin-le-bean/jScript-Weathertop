@@ -8,31 +8,29 @@ const dashboard = {
   index(request, response) {
     logger.info("dashboard rendering");
     const viewData = {
-        title: "Weather Data Dashboard",
+      title: "Weather Data Dashboard",
       weather: weatherData.getAllWeather(),
-      
     };
     response.render("dashboard", viewData);
   },
-  
-    addStation(request, response) {
+
+  addStation(request, response) {
     const newStation = {
       id: uuid.v1(),
       station: request.body.station,
-      data: []
+      data: [],
     };
     logger.debug("Creating a new Station", newStation);
     weatherData.addStation(newStation);
     response.redirect("/dashboard");
   },
-  
-    deleteStation(request, response) {
+
+  deleteStation(request, response) {
     const stationId = request.params.id;
     logger.debug(`Deleting Station ${stationId}`);
     weatherData.removeStation(stationId);
     response.redirect("/dashboard");
   },
-    
 };
 
 module.exports = dashboard;

@@ -1,24 +1,16 @@
 <section class="ui segment" style="background-color: #C0DDEF">
   {{#each weather}}
     <h2 class="ui header"> <p> {{station}} : </p> </h2>
-      <section class="ui segment" style="background-color: #C0DDEF">
-        {{#each data}}
-          {{#if @last}}
-            <p> {{code}}<br><br></p>
-          {{/if}}
-       {{/each}}
+    <section class="ui segment" style="background-color: #C0DDEF">
+      {{#each data}}
+        {{#if @last}}
+          <p> {{code}}<br /><br /></p>
+        {{/if}}
+      {{/each}}
 
       <a href="/station/{{id}}"> <i class="folder open icon"></i> </a>
-        <a href="/dashboard/deleteStation/{{id}}" class="ui icon button">
-          <i class="icon trash"></i></a>
-     </section>
+      <a href="/dashboard/deleteStation/{{id}}" class="ui icon button">
+        <i class="icon trash"></i></a>
+    </section>
   {{/each}}
 </section>
-
-  
-
-  
-
-
-
-
