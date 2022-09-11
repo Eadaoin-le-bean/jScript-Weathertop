@@ -2,16 +2,36 @@
 
 const logger = require("../utils/logger");
 const weatherData = require("../models/weather-data");
+const stationProcessor = require("../utils/stationProcessor");
 const uuid = require("uuid");
 
 const station = {
   index(request, response) {
     const stationId = request.params.id;
         logger.info("Station Rendering: " + stationId);
-
+    const getStation = weatherData.getStation(stationId);
+    const beaufort = stationProcessor.getBeaufort(getStation);
+    const fahrenite = stationProcessor.getTempInF(getStation);
+    const celcius = stationProcessor.getTemp(getStation);
+    const direction = stationProcessor.getWDir(getStation);
+    const weatherPressure = stationProcessor.getPressure(getStation);
+    const windChill = stationProcessor.getWChill(getStation);
+    const weatherString = stationProcessor.getWeatherFromCode(getStation);
+    const weatherIcon = stationProcessor.getIcon(getStation);
     const viewData = {
-      station: weatherData.getStation(stationId)
+      station: weatherData.getStation(stationId),
+      beaufort: beaufort,
+      weatherString: weatherString,
+      fahrenite: fahrenite,
+      celcius: celcius,
+      direction: direction,
+      windChill: windChill,
+      weatherPressure: weatherPressure,
+      weatherIcon: weatherIcon 
     };
+    
+    
+    
     response.render("station", viewData);
     
     

@@ -1,9 +1,14 @@
 {{> menu}}
 
 <section class="ui center aligned middle aligned segment">
+  <div class="ui center aligned message" style="background-color: #D98566">
   <h2 class="ui header">
    {{station.station}}
   </h2>
+  <h4>General Weather Data Logs :</h4>
+  </div>
+  <br>
+{{>latestWeatherDashboard}}
 {{> listStationData}}
 {{> addStationData}}
 </section>
