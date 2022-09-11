@@ -1,0 +1,23 @@
+<section class="ui segment" style="background-color: #C0DDEF">
+  {{#each weather}}
+    <h2 class="ui header"> <p> {{station}} : </p> </h2>
+      <section class="ui segment" style="background-color: #C0DDEF">
+        {{#each data}}
+          {{#if @last}}
+            <p> {{code}}<br><br></p>
+          {{/if}}
+       {{/each}}
+
+  
+    <a href="/station/{{id}}"> <i class="folder open icon"></i> </a>
+     </section>
+  {{/each}}
+</section>
+
+  
+
+  
+
+
+
+

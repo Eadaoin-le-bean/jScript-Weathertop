@@ -1,0 +1,34 @@
+<table class="ui table">
+  <thead>
+    <tr>
+      <th>Latest Weather</th>
+      <th>Temperature</th>
+      <th>Wind Speed</th>
+      <th>Wind Direction</th>
+      <th>Pressure</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each station.data}}
+      <tr>
+        <td>
+          {{code}}
+        </td>
+        <td>
+          {{temp}}
+        </td>
+        <td>
+          {{wSpeed}}
+        </td>
+        <td>
+          {{wDir}}
+        </td>
+        <td>
+          {{pressure}}
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
+
+ 
